@@ -72,3 +72,8 @@ git clone https://github.com/hy-123321/kmeans-visualizer.git
 
 cd kmeans-visualizer
 
+
+2. 运行程序：
+
+```bash
+python main.py
