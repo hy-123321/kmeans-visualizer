@@ -70,7 +70,7 @@ K-Means 是经典的\*\*无监督学习\*\*聚类算法。本项目通过可视�
 
 git clone https://github.com/hy-123321/kmeans-visualizer.git
 
-cd kmeans-visualizer
+cd kmeans-visualizer```
 
 
 2. 运行程序：
