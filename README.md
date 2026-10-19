@@ -42,14 +42,14 @@ python main.py
 
 ### 核心提交记录（Commit History）与冲突解决（PR）：
 
-- xxxxxxx [负责人] init: 初始化仓库结构，添加 .gitignore 和 README
-- xxxxxxx [负责人] docs: 提交《项目需求与设计文档》初稿
-- xxxxxxx [负责人] docs: 补充 README 项目说明
-- xxxxxxx [成员 B] feat(ui): 实现主窗口布局与 Canvas 画布初始化
-- xxxxxxx [成员 C] feat(core): 实现 K-Means 核心迭代逻辑
-- xxxxxxx [成员 D] feat(animation): 实现单步执行与自动播放控制
-- xxxxxxx [负责人] fix: 解决 main 分支与 feature/ui 在窗口参数合并时的冲突
-- xxxxxxx [负责人] docs: 完善最终版 README 与项目结题总结
+- xxxxxxx [袁恒宇] init: 初始化仓库结构，添加 .gitignore 和 README
+- xxxxxxx [袁恒宇] docs: 提交《项目需求与设计文档》初稿
+- xxxxxxx [袁恒宇] docs: 补充 README 项目说明
+- xxxxxxx [庞照阳] feat(ui): 实现主窗口布局与 Canvas 画布初始化
+- xxxxxxx [庞照阳] feat(core): 实现 K-Means 核心迭代逻辑
+- xxxxxxx [庞照阳] feat(animation): 实现单步执行与自动播放控制
+- xxxxxxx [张迎奥] fix: 解决 main 分支与 feature/ui 在窗口参数合并时的冲突
+- xxxxxxx [叶世航] docs: 完善最终版 README 与项目结题总结
 
 ## 四、软件运行截图
 
@@ -57,20 +57,20 @@ python main.py
 
 ## 五、主要功能说明
 
-- **自定义输入**：可设置数据点数量与聚类数 K（2–6），点击“生成数据”随机撒点。
+- **自定义K值**：可设置数据点数量与聚类数 K（2–6），点击“生成数据”随机撒点。
 - **单步执行**：点击“单步执行”按钮，算法执行一次“分配簇”或“更新质心”操作。
 - **自动播放**：点击“自动播放”按钮，系统按设定速度自动连续迭代。
-- **实时可视化**：散点按簇着色，质心用星形标记，可显示点到质心的归属连线。
+- **实时可视化**：散点按簇着色，质心用叉形标记，可显示点到质心的归属连线。
 - **统计面板**：实时显示当前迭代轮数、质心坐标、SSE 与收敛状态。
 
 ## 六、贡献者名单
 
 本程序由“K-Means 可视化小组”共同开发：
 
-- **负责人**（项目经理 PM）：统筹进度与规范、核心算法、代码合并与 README 编写
-- **成员 B**（UI/UX 交互设计师）：系统 UI 布局、Canvas 绘制与操作手册编写
-- **成员 C**（算法工程师）：数据生成、质心初始化与 SSE 计算
-- **成员 D**（动画与文档）：动画控制、AI_Prompts_Log 记录与测试
+- **袁恒宇**（项目经理 PM）：统筹进度与规范、核心算法、代码合并与 README 编写
+- **庞照阳**（UI/UX 交互设计师）：系统 UI 布局、Canvas 绘制与操作手册编写
+- **张迎奥**（算法工程师）：数据生成、质心初始化与 SSE 计算
+- **叶世航**（动画与文档）：动画控制、AI_Prompts_Log 记录与测试
 
 ## 七、开源协议
 
