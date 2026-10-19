@@ -48,7 +48,6 @@ python main.py
 - 555785e [庞照阳] feat(ui): 实现主窗口布局与 Canvas 画布初始化
 - fc66950 [张迎奥] feat(core): 实现 K-Means 核心迭代逻辑
 - 89d3581 [叶世航] feat(animation): 实现单步执行与自动播放控制
-- 8409887 [袁恒宇] fix: 解决 main 分支与 feature/ui 在窗口参数合并时的冲突
 - a5ff33a [叶世航] docs: 完善最终版 README 与项目结题总结
 
 ## 四、软件运行截图
