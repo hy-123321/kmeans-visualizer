@@ -42,14 +42,14 @@ python main.py
 
 ### 核心提交记录（Commit History）与冲突解决（PR）：
 
-- xxxxxxx [袁恒宇] init: 初始化仓库结构，添加 .gitignore 和 README
-- xxxxxxx [袁恒宇] docs: 提交《项目需求与设计文档》初稿
-- xxxxxxx [袁恒宇] docs: 补充 README 项目说明
-- xxxxxxx [庞照阳] feat(ui): 实现主窗口布局与 Canvas 画布初始化
-- xxxxxxx [张迎奥] feat(core): 实现 K-Means 核心迭代逻辑
-- xxxxxxx [叶世航] feat(animation): 实现单步执行与自动播放控制
-- xxxxxxx [袁恒宇] fix: 解决 main 分支与 feature/ui 在窗口参数合并时的冲突
-- xxxxxxx [叶世航] docs: 完善最终版 README 与项目结题总结
+- b90874c [袁恒宇] init: 初始化仓库结构，添加 .gitignore 和 README
+- 1eef19c [袁恒宇] docs: 提交《项目需求与设计文档》初稿
+- ca78e9d [袁恒宇] docs: 补充 README 项目说明
+- 555785e [庞照阳] feat(ui): 实现主窗口布局与 Canvas 画布初始化
+- fc66950 [张迎奥] feat(core): 实现 K-Means 核心迭代逻辑
+- 89d3581 [叶世航] feat(animation): 实现单步执行与自动播放控制
+- 8409887 [袁恒宇] fix: 解决 main 分支与 feature/ui 在窗口参数合并时的冲突
+- a5ff33a [叶世航] docs: 完善最终版 README 与项目结题总结
 
 ## 四、软件运行截图
 
