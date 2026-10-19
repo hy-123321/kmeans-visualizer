@@ -46,14 +46,15 @@ python main.py
 - xxxxxxx [袁恒宇] docs: 提交《项目需求与设计文档》初稿
 - xxxxxxx [袁恒宇] docs: 补充 README 项目说明
 - xxxxxxx [庞照阳] feat(ui): 实现主窗口布局与 Canvas 画布初始化
-- xxxxxxx [庞照阳] feat(core): 实现 K-Means 核心迭代逻辑
-- xxxxxxx [庞照阳] feat(animation): 实现单步执行与自动播放控制
-- xxxxxxx [张迎奥] fix: 解决 main 分支与 feature/ui 在窗口参数合并时的冲突
+- xxxxxxx [张迎奥] feat(core): 实现 K-Means 核心迭代逻辑
+- xxxxxxx [叶世航] feat(animation): 实现单步执行与自动播放控制
+- xxxxxxx [袁恒宇] fix: 解决 main 分支与 feature/ui 在窗口参数合并时的冲突
 - xxxxxxx [叶世航] docs: 完善最终版 README 与项目结题总结
 
 ## 四、软件运行截图
 
-（此处插入程序运行截图，待补）
+<img width="2476" height="1634" alt="K-means可视化程序截图" src="https://github.com/user-attachments/assets/9b438744-9166-4be5-9040-6c03a40313b6" />
+
 
 ## 五、主要功能说明
 
