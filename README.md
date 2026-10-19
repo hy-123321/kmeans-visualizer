@@ -23,7 +23,7 @@ git clone https://github.com/hy-123321/kmeans-visualizer.git
 cd kmeans-visualizer
 
 # 3. 运行主程序
-python main.py
+python K-means.py
 ```
 
 ## 三、GitHub 仓库链接与 Git 协作记录
