@@ -44,28 +44,31 @@ python K-means.py --self-test
 程序按职责划分为若干模块，各模块只通过固定接口交互，便于独立开发和单元测试：
 
 ```
-K-means.py                 程序入口（保持 python K-means.py 的用法）
-kmeans_lab/
-  config.py                全局常量、类型别名、数据集清单
-  algorithm.py             KMeans2D 状态机：分配簇、更新质心、收敛判断
-  initialization.py        质心初始化：随机选点与 K-means++
-  data.py                  四种数据形状生成（三簇 / 四簇 / 同心圆 / 笑脸）
-  metrics.py               SSE、轮廓系数、K 值推荐
-  view.py                  Matplotlib 绘制：散点、置信椭圆、质心、K 值分析图
-  ui.py                    Tkinter 界面布局与控件样式
-  animation.py             单步补间的帧控制与连续运行调度
-  export.py                聚类结果 CSV 与可视化图像导出
-  app.py                   控制器：界面状态与各模块的调用关系
-  main.py                  命令行入口与测试调度
-tests/                     单元测试（21 项，覆盖数据、算法、指标、绘制与导出）
+K-means.py                     程序入口（python K-means.py）
+requirements.txt               第三方依赖清单
+kmeans_lab/                    源码包
+├── config.py                  全局常量、类型别名、数据集清单
+├── algorithm.py               KMeans2D 状态机：分配簇、更新质心、收敛判断
+├── initialization.py          质心初始化：随机选点与 K-means++
+├── data.py                    四种数据形状生成（三簇 / 四簇 / 同心圆 / 笑脸）
+├── metrics.py                 SSE、轮廓系数、K 值推荐
+├── view.py                    Matplotlib 绘制：散点、置信椭圆、K 值分析图
+├── ui.py                      Tkinter 界面布局与控件样式
+├── animation.py               单步补间的帧控制与连续运行调度
+├── export.py                  聚类结果 CSV 与可视化图像导出
+├── app.py                     控制器：界面状态与各模块的调用关系
+├── main.py                    命令行入口与测试调度
+└── __init__.py                包信息与版本号
+tests/                         单元测试（21 项，覆盖数据、算法、指标、绘制与导出）
 tools/
-  generate_figures.py      用真实运行结果生成文档配图
-images/                    文档配图（由上述脚本生成）
+└── generate_figures.py        用真实运行结果生成文档配图
+images/                        文档配图（由上述脚本生成）
 docs/
-  MANUAL.md                操作手册
-  AI_Prompts_Log.md        AI 协作记录
-requirements.txt           第三方依赖清单
+├── MANUAL.md                  操作手册
+└── AI_Prompts_Log.md          AI 协作记录
 ```
+
+源文件路径示例：`kmeans_lab/main.py`、`kmeans_lab/ui.py`、`kmeans_lab/algorithm.py`——都在 `kmeans_lab` 目录下，不在仓库根目录。
 
 数据流为：`app` 读取界面设置 → `data` 生成数据 → `algorithm` 迭代并调用 `metrics` 计算指标 → `view` 按当前状态重绘 → `animation` 控制重绘的节奏。算法层不依赖任何界面代码，因此可以脱离图形界面单独测试。
 
