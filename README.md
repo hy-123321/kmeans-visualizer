@@ -100,7 +100,21 @@ docs/
 
 ## 五、软件运行截图
 
+程序主界面：
+
 <img width="2476" height="1634" alt="K-means可视化程序截图" src="https://github.com/user-attachments/assets/9b438744-9166-4be5-9040-6c03a40313b6" />
+
+画布上的聚类结果（数据：四簇高斯分布，种子 42，跑至收敛）：
+
+| 三簇高斯 K=3 | 四簇高斯 K=4 | 同心圆 K=2（非凸失效） |
+|---|---|---|
+| ![](images/01_blobs_k3.png) | ![](images/03_four_blobs_k4.png) | ![](images/05_rings_k2.png) |
+
+K 值分析（肘部法与轮廓系数，K=2–8）：
+
+![](images/07_k_analysis.png)
+
+> 以上配图由 `tools/generate_figures.py` 用同一套算法模块运行生成，可在项目根目录执行 `python tools/generate_figures.py` 复现。
 
 ## 六、主要功能说明
 
