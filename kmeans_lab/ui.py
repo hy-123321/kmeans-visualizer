@@ -29,7 +29,7 @@ from .config import (
 from .view import PlotView
 
 UI_FONT = "Microsoft YaHei UI"
-SIDEBAR_WIDTH = 300
+SIDEBAR_WIDTH = 312
 
 
 def configure_style(root: tk.Tk) -> None:
