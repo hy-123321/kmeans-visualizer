@@ -10,11 +10,13 @@
 
 - 操作系统：Windows 10/11、macOS 或 Linux
 - Python 版本：Python 3.8 及以上
-- 第三方库：NumPy、Matplotlib（Tkinter 随 Python 自带，无需单独安装）
+- 第三方库：NumPy、Matplotlib；Tkinter、csv、math、random 等为标准库，随 Python 自带
 
 ```
-pip install numpy matplotlib
+pip install -r requirements.txt
 ```
+
+（也可手动安装：`pip install numpy matplotlib`）
 
 ### 2. 运行步骤
 
@@ -28,7 +30,7 @@ git clone https://github.com/hy-123321/kmeans-visualizer.git
 cd kmeans-visualizer
 
 # 3. 安装依赖
-pip install numpy matplotlib
+pip install -r requirements.txt
 
 # 4. 运行主程序
 python K-means.py
@@ -56,9 +58,13 @@ kmeans_lab/
   app.py                   控制器：界面状态与各模块的调用关系
   main.py                  命令行入口与测试调度
 tests/                     单元测试（21 项，覆盖数据、算法、指标、绘制与导出）
+tools/
+  generate_figures.py      用真实运行结果生成文档配图
+images/                    文档配图（由上述脚本生成）
 docs/
   MANUAL.md                操作手册
   AI_Prompts_Log.md        AI 协作记录
+requirements.txt           第三方依赖清单
 ```
 
 数据流为：`app` 读取界面设置 → `data` 生成数据 → `algorithm` 迭代并调用 `metrics` 计算指标 → `view` 按当前状态重绘 → `animation` 控制重绘的节奏。算法层不依赖任何界面代码，因此可以脱离图形界面单独测试。
