@@ -29,7 +29,8 @@ from .config import (
 from .view import PlotView
 
 UI_FONT = "Microsoft YaHei UI"
-SIDEBAR_WIDTH = 312
+# 侧栏宽度：界面组希望加宽避免控件文字换行（312），核心组要求适配 1024 宽屏（288），折中取 300
+SIDEBAR_WIDTH = 300
 
 
 def configure_style(root: tk.Tk) -> None:
