@@ -196,20 +196,13 @@ class PlotView:
         self.figure.savefig(path, dpi=200, bbox_inches="tight")
 
 
-def show_k_analysis(
-    parent,
+def build_k_analysis_figure(
     results: list[tuple[int, float, float | None]],
-) -> str:
-    """弹出“K 值分析”窗口并返回综合建议文案。"""
-    import tkinter as tk
-    from tkinter import ttk
+) -> tuple[Figure, str]:
+    """构造「肘部 + 轮廓」双联图，返回 (Figure, 综合建议文案)。
 
-    window = tk.Toplevel(parent)
-    window.title("K 值分析（肘部＋轮廓）")
-    window.geometry("900x440")
-    window.minsize(700, 360)
-    window.transient(parent)
-
+    与 Tk 无关，因此既能嵌进弹窗，也能被脚本直接导出成图片。
+    """
     figure = Figure(figsize=(9, 4.4), dpi=100, facecolor="#ffffff")
     inertia_axes, silhouette_axes = figure.subplots(1, 2)
     k_values = [result[0] for result in results]
@@ -276,9 +269,6 @@ def show_k_analysis(
         )
 
     figure.tight_layout(pad=2.0)
-    canvas = FigureCanvasTkAgg(figure, master=window)
-    canvas.get_tk_widget().pack(fill="both", expand=True, padx=10, pady=10)
-    canvas.draw()
 
     if silhouette_k is None or silhouette_value is None:
         recommendation = (
@@ -296,6 +286,28 @@ def show_k_analysis(
             f"肘部法提示 K={elbow_k}（SSE={inertias[elbow_index]:.2f}）。"
             "两项指标不一致，建议结合业务可解释性判断。"
         )
+    return figure, recommendation
+
+
+def show_k_analysis(
+    parent,
+    results: list[tuple[int, float, float | None]],
+) -> str:
+    """弹出“K 值分析”窗口并返回综合建议文案。"""
+    import tkinter as tk
+    from tkinter import ttk
+
+    window = tk.Toplevel(parent)
+    window.title("K 值分析（肘部＋轮廓）")
+    window.geometry("900x440")
+    window.minsize(700, 360)
+    window.transient(parent)
+
+    figure, recommendation = build_k_analysis_figure(results)
+    canvas = FigureCanvasTkAgg(figure, master=window)
+    canvas.get_tk_widget().pack(fill="both", expand=True, padx=10, pady=10)
+    canvas.draw()
+
     ttk.Label(
         window,
         text=recommendation,
