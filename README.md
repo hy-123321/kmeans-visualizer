@@ -47,14 +47,13 @@ kmeans_lab/
   ui.py                    ttk 主题与界面布局 —— 庞照阳
   animation.py             单步补间与连续运行 —— 叶世航
   export.py                CSV 与图像导出 —— 叶世航
-tests/                     单元测试（各模块作者自测 + 叶世航联调）
+tests/                     单元测试
 docs/
-  CONTRIBUTING.md          协作规范、分支策略、合并顺序
   MANUAL.md                操作手册 —— 庞照阳
   AI_Prompts_Log.md        AI 协作记录 —— 叶世航
 ```
 
-协作约定见 [`docs/CONTRIBUTING.md`](docs/CONTRIBUTING.md)，其中列出了每个文件的负责人、接口契约与合并顺序。
+模块之间通过固定接口调用：`algorithm.KMeans2D` 负责迭代，`metrics` 统一计算 SSE 与轮廓系数，`view`/`ui` 只负责绘制与布局，`animation` 只控制节奏，`app` 把各层串起来。
 
 ## 三、GitHub 仓库链接与 Git 协作记录
 
