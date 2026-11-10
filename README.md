@@ -24,7 +24,37 @@ cd kmeans-visualizer
 
 # 3. 运行主程序
 python K-means.py
+
+# 4. 不弹窗口，只跑单元测试（21 项）
+python K-means.py --self-test
 ```
+
+### 3. 代码结构（按成员分工拆分）
+
+原先是一个 1400 行的单文件，现已按团队分工拆成模块包，每人只维护自己的文件，避免互相覆盖：
+
+```
+K-means.py                 入口薄包装（保持 python K-means.py 用法不变）
+kmeans_lab/
+  config.py                共享常量与接口契约 —— 袁恒宇
+  algorithm.py             KMeans2D 核心迭代 —— 袁恒宇
+  app.py                   控制器（状态 + 事件处理）—— 袁恒宇
+  main.py                  命令行入口 —— 袁恒宇
+  data.py                  四种数据形状生成 —— 张迎奥
+  initialization.py        随机 / K-means++ 初始化 —— 张迎奥
+  metrics.py               SSE / 轮廓系数 / K 值推荐 —— 张迎奥
+  view.py                  Matplotlib 绘制与 K 值分析弹窗 —— 庞照阳
+  ui.py                    ttk 主题与界面布局 —— 庞照阳
+  animation.py             单步补间与连续运行 —— 叶世航
+  export.py                CSV 与图像导出 —— 叶世航
+tests/                     单元测试（各模块作者自测 + 叶世航联调）
+docs/
+  CONTRIBUTING.md          协作规范、分支策略、合并顺序
+  MANUAL.md                操作手册 —— 庞照阳
+  AI_Prompts_Log.md        AI 协作记录 —— 叶世航
+```
+
+协作约定见 [`docs/CONTRIBUTING.md`](docs/CONTRIBUTING.md)，其中列出了每个文件的负责人、接口契约与合并顺序。
 
 ## 三、GitHub 仓库链接与 Git 协作记录
 
@@ -37,8 +67,9 @@ python K-means.py
 - **main**：主分支，存放最终发布的稳定版本。
 - **docs/requirements**：文档编写分支。
 - **feature/ui**：Tkinter 界面布局与 Canvas 绘制分支。
-- **feature/kmeans-core**：K-Means 核心迭代逻辑分支。
-- **feature/animation**：动画控制与交互分支。
+- **feature/core**：K-Means 核心算法与控制器分支。
+- **feature/algorithm**：数据生成、质心初始化与指标分支。
+- **feature/animation**：动画控制与导出分支。
 
 ### 核心提交记录（Commit History）与冲突解决（PR）：
 
