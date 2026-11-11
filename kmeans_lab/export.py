@@ -9,7 +9,6 @@
 from __future__ import annotations
 
 import csv
-from tkinter import filedialog, messagebox
 
 from .config import Point
 
@@ -46,6 +45,8 @@ def export_csv_dialog(
     centroids: list[Point],
 ) -> str | None:
     """弹出保存对话框并导出 CSV；用户取消或失败时返回 None。"""
+    from tkinter import filedialog, messagebox
+
     path = filedialog.asksaveasfilename(
         parent=parent,
         title="导出聚类结果",
@@ -65,6 +66,8 @@ def export_csv_dialog(
 
 def save_image_dialog(parent, view) -> str | None:
     """弹出保存对话框并导出当前可视化图像；用户取消或失败时返回 None。"""
+    from tkinter import filedialog, messagebox
+
     path = filedialog.asksaveasfilename(
         parent=parent,
         title="保存聚类可视化",
