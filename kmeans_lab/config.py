@@ -23,6 +23,7 @@ WINDOW_SIZE = "1240x790"
 WINDOW_MIN_SIZE = (1040, 680)
 BG_COLOR = "#f1f5f9"
 CARD_COLOR = "#ffffff"
+FONT_FAMILY = "Microsoft YaHei UI"
 
 PALETTE = (
     "#1f77b4",

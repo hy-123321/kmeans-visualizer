@@ -20,15 +20,16 @@ from tkinter import ttk
 from .config import (
     BG_COLOR,
     CARD_COLOR,
+    DATASETS,
+    FONT_FAMILY,
     MAX_COUNT,
     MAX_K,
     MIN_COUNT,
     MIN_K,
-    DATASETS,
 )
 from .view import PlotView
 
-UI_FONT = "Microsoft YaHei UI"
+UI_FONT = FONT_FAMILY
 # 侧栏宽度：界面组希望加宽避免控件文字换行（312），核心组要求适配 1024 宽屏（288），折中取 300
 SIDEBAR_WIDTH = 300
 

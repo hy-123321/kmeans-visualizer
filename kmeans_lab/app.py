@@ -12,7 +12,7 @@ from tkinter import messagebox
 
 from matplotlib.backend_bases import MouseEvent
 
-from .algorithm import KMeans2D, assign_clusters
+from .algorithm import KMeans2D
 from .animation import AnimationController
 from .config import (
     BG_COLOR,
@@ -295,4 +295,4 @@ class KMeansApp:
         self.root.destroy()
 
 
-__all__ = ["KMeansApp", "assign_clusters"]
+__all__ = ["KMeansApp"]

@@ -1,5 +1,7 @@
 # K-Means 聚类算法迭代过程可视化
 
+[![tests](https://github.com/hy-123321/kmeans-visualizer/actions/workflows/tests.yml/badge.svg)](https://github.com/hy-123321/kmeans-visualizer/actions/workflows/tests.yml)
+
 ## 一、项目简介
 
 本项目是“拼好组”为《计算机与专业基础研讨》大作业开发的桌面演示程序。程序使用 Python 的 Tkinter 构建界面、Matplotlib 绘制图形，完整模拟 K-Means 聚类算法在二维数据上的迭代过程：散点按所属簇着色，质心随迭代移动，SSE 与轮廓系数实时更新，帮助学习者直观理解无监督学习中的聚类机制。
@@ -35,7 +37,7 @@ pip install -r requirements.txt
 # 4. 运行主程序
 python K-means.py
 
-# 5. 不弹窗口，只跑单元测试（21 项）
+# 5. 不弹窗口，只跑单元测试（27 项）
 python K-means.py --self-test
 ```
 
@@ -45,7 +47,8 @@ python K-means.py --self-test
 
 ```
 K-means.py                     程序入口（python K-means.py）
-requirements.txt               第三方依赖清单
+pyproject.toml                 项目元数据与依赖声明
+requirements.txt               运行依赖清单
 kmeans_lab/                    源码包
 ├── config.py                  全局常量、类型别名、数据集清单
 ├── algorithm.py               KMeans2D 状态机：分配簇、更新质心、收敛判断
@@ -59,10 +62,11 @@ kmeans_lab/                    源码包
 ├── app.py                     控制器：界面状态与各模块的调用关系
 ├── main.py                    命令行入口与测试调度
 └── __init__.py                包信息与版本号
-tests/                         单元测试（21 项，覆盖数据、算法、指标、绘制与导出）
+tests/                         单元测试（27 项，覆盖数据、算法、指标、动画、绘制与导出）
 tools/
 └── generate_figures.py        用真实运行结果生成文档配图
 images/                        文档配图（由上述脚本生成）
+.github/workflows/tests.yml   持续集成：每次提交自动跑单元测试
 docs/
 ├── MANUAL.md                  操作手册
 └── AI_Prompts_Log.md          AI 协作记录
@@ -94,7 +98,7 @@ docs/
 | `kmeans_lab/ui.py` | `SIDEBAR_WIDTH` 常量 | `feature/ui` 改为 312（避免侧栏控件文字换行）；`feature/core` 改为 288（适配 1024 宽度屏幕） | 折中取 300，并在常量上方加注释说明取值依据 |
 | `README.md` | “实时可视化”一条功能说明 | 同一句话的两种措辞 | 保留信息更完整的一版 |
 
-解决过程：逐处查看 `<<<<<<<` / `=======` / `>>>>>>>` 冲突标记 → 沟通确认双方意图 → 手工合并并删除标记 → 运行 `python K-means.py --self-test` 确认 21 项测试全部通过 → 提交合并（`4470f3e`）。
+解决过程：逐处查看 `<<<<<<<` / `=======` / `>>>>>>>` 冲突标记 → 沟通确认双方意图 → 手工合并并删除标记 → 运行 `python K-means.py --self-test` 确认测试全部通过 → 提交合并（`4470f3e`）。
 
 ### 核心提交记录（Commit History）节选：
 

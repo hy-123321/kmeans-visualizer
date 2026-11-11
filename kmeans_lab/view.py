@@ -13,17 +13,16 @@ from typing import Sequence
 
 import matplotlib
 import numpy as np
-from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 from matplotlib.figure import Figure
 
 # 中文字体与负号：在创建任何 Figure 之前设好，避免中文变成方块
 matplotlib.rcParams["font.sans-serif"] = ["SimHei", "Microsoft YaHei"]
 matplotlib.rcParams["axes.unicode_minus"] = False
 
-from .config import PALETTE, Point
+from .config import FONT_FAMILY, PALETTE, Point
 from .metrics import recommend_k_values
 
-FONT = "Microsoft YaHei UI"
+FONT = FONT_FAMILY
 
 
 @dataclass(frozen=True)
@@ -82,6 +81,9 @@ class PlotView:
     """主画布：负责散点、置信椭圆、质心与移动箭头的绘制。"""
 
     def __init__(self, master) -> None:
+        # 按需导入 Tk 后端：让本模块在没有图形环境的机器上也能被导入（供测试与 CI 使用）
+        from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
+
         self.figure = Figure(figsize=(6, 5), dpi=100, facecolor="#ffffff")
         self.axes = self.figure.add_subplot(111)
         self.bridge = FigureCanvasTkAgg(self.figure, master=master)
@@ -296,6 +298,8 @@ def show_k_analysis(
     """弹出“K 值分析”窗口并返回综合建议文案。"""
     import tkinter as tk
     from tkinter import ttk
+
+    from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 
     window = tk.Toplevel(parent)
     window.title("K 值分析（肘部＋轮廓）")
