@@ -22,7 +22,7 @@ K-Means 聚类算法是无监督学习中的经典算法，其迭代过程（分
 
 本系统采用 Python 的 tkinter 库进行构建，整体分为左右两大模块。左侧为控制面板与统计信息，右侧为 Canvas 画布，用于绘制散点与质心；
 
-<img width="2476" height="1634" alt="K-means可视化程序截图" src="https://github.com/user-attachments/assets/6ff93805-4023-43e7-a13c-777686888930" />
+![K-means 聚类结果](images/01_blobs_k3.png)
 
 
 ## 四、团队分工协作表
