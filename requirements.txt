@@ -1,2 +1,3 @@
+# 运行依赖（修改时请同步 pyproject.toml 的 dependencies）
 matplotlib>=3.5
 numpy>=1.20
